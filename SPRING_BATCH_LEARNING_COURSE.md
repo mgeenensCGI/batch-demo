@@ -2,92 +2,179 @@
 
 # Spring Batch Learning Course (Spring Boot 4.x + Spring Batch 6.x)
 
+## Progress
+
+### Current Status
+
+- [x] Phase 0 - Environment Setup
+- [x] Phase 1 - First Job
+- [ ] Phase 2 - Chunk Processing Fundamentals
+- [ ] Phase 3 - Job Parameters
+- [ ] Phase 4 - Validation
+- [ ] Phase 5 - Fault Tolerance
+- [ ] Phase 6 - Listeners
+- [ ] Phase 7 - Multiple Steps
+- [ ] Phase 8 - Database Readers
+- [ ] Phase 9 - Flat File Generation
+- [ ] Phase 10 - Parallel Processing
+- [ ] Phase 11 - Partitioning
+- [ ] Phase 12 - Batch Testing
+- [ ] Phase 13 - Production Concerns
+- [ ] Final Project - Customer Data Platform
+
+### Last Completed Phase
+
+Phase 1 - First Job
+
+### Next Phase
+
+Phase 2 - Chunk Processing Fundamentals
+
+### Current Knowledge Acquired
+
+- Spring Batch architecture overview
+- Job / Step / Tasklet hierarchy
+- JobRepository role
+- TransactionManager role
+- Batch metadata persistence
+- JobInstance vs JobExecution
+- StepExecution lifecycle
+- Batch statuses (STARTING, STARTED, COMPLETED, FAILED, STOPPED)
+- Restartability fundamentals
+- RunIdIncrementer usage
+- Automatic job launching with Spring Boot
+- JobInstanceAlreadyCompleteException troubleshooting
+
+---
+
 ## Goal
 
-Learn Spring Batch using modern Spring Boot configuration.
+Learn Spring Batch using modern Spring Boot configuration and modern Spring Batch APIs.
 
 This course avoids:
-- XML bean configuration
-- Legacy JobBuilderFactory
-- Legacy StepBuilderFactory
+
+* XML bean configuration
+* Legacy JobBuilderFactory
+* Legacy StepBuilderFactory
 
 The application evolves through successive iterations until it resembles a production-grade batch application.
 
 ---
 
-# Phase 0 - Environment Setup
+# Learning Mode
 
-## Objective
+## Instructor Role
 
-Understand the infrastructure required by Spring Batch.
+The instructor acts as a Spring Batch professor and senior backend engineer.
 
-## Topics
+The learning approach prioritizes:
 
-- Spring Batch architecture
-- Batch metadata tables
-- JobRepository
-- JobExecution
-- StepExecution
-- PostgreSQL integration
-- Dockerized database
+* Understanding through implementation
+* Modern Spring Batch best practices
+* Production-oriented architecture
+* Incremental complexity
+* Hands-on coding
 
-## Practical Work
+The instructor should:
 
-Create:
+* Explain concepts briefly before implementation
+* Focus primarily on coding and practical exercises
+* Avoid excessive theory and long question sequences
+* Let the learner drive deeper discussions through questions
+* Explain architectural decisions when introducing new components
+* Use modern Spring Boot 4.x and Spring Batch 6.x APIs
 
-- Spring Boot application
-- PostgreSQL container
-- Batch metadata schema
-- Business schema
+For each phase:
 
-Verify:
-
-- application starts
-- Spring Batch tables are created
-
-Expected Outcome:
-
-Understand what Spring Batch stores internally.
+1. Explain the objective
+2. Explain the minimal required concepts
+3. Implement the feature
+4. Validate the result
+5. Highlight production considerations
 
 ---
 
-# Phase 1 - First Job
+# Phase 0 - Environment Setup ✅ COMPLETED
 
-## Objective
+## Status
 
-Understand the core concepts.
+Completed.
 
-## Topics
+## Topics Covered
 
-- Job
-- Step
-- Tasklet
-- JobRepository
-- Transaction Manager
+* Spring Batch architecture
+* Batch metadata tables
+* JobRepository
+* PostgreSQL integration
+* Batch infrastructure overview
 
-## Practical Work
+## Outcome
 
-Create:
+Understood:
+
+* Why Spring Batch requires metadata tables
+* Role of JobRepository
+* Role of Spring Batch infrastructure
+
+---
+
+# Phase 1 - First Job ✅ COMPLETED
+
+## Status
+
+Completed.
+
+## Topics Covered
+
+* Job
+* Step
+* Tasklet
+* JobRepository
+* Transaction Manager
+* JobInstance
+* JobExecution
+* StepExecution
+* Batch statuses
+* Restartability basics
+
+## Practical Work Completed
+
+Implemented:
 
 HelloWorldJob
 
-Step:
+with:
 
-Print:
+HelloWorldStep
 
-Hello Spring Batch
+and:
 
-using a Tasklet.
+HelloWorldTasklet
 
-Expected Outcome:
+Verified:
 
-Understand:
+* Job startup
+* Tasklet execution
+* Metadata persistence
+* JobInstanceAlreadyCompleteException behavior
+* RunIdIncrementer usage
+
+## Outcome
+
+Understood:
 
 Job
 → Step
 → Tasklet
 
 execution flow.
+
+Understood:
+
+JobInstance
+→ JobExecution
+
+relationship.
 
 ---
 
@@ -99,10 +186,13 @@ Learn the most important Spring Batch pattern.
 
 ## Topics
 
-- ItemReader
-- ItemProcessor
-- ItemWriter
-- Chunk Processing
+* Chunk-oriented processing
+* ItemReader
+* ItemProcessor
+* ItemWriter
+* Chunk size
+* Transaction boundaries
+* Commit cycles
 
 ## Practical Work
 
@@ -132,6 +222,14 @@ Read
 
 lifecycle.
 
+Understand:
+
+Chunk
+→ Transaction
+→ Commit
+
+lifecycle.
+
 ---
 
 # Phase 3 - Job Parameters
@@ -142,10 +240,11 @@ Make jobs reusable.
 
 ## Topics
 
-- JobParameters
-- JobInstance
-- JobExecution
-- Restartability
+* JobParameters
+* JobInstance
+* JobExecution
+* Restartability
+* Identifying parameters
 
 ## Practical Work
 
@@ -175,16 +274,16 @@ Introduce business validation.
 
 ## Topics
 
-- Jakarta Validation
-- Custom validation
-- Validation exceptions
+* Jakarta Validation
+* Custom validation
+* Validation exceptions
 
 ## Practical Work
 
 Reject:
 
-- invalid email
-- missing first name
+* invalid email
+* missing first name
 
 Expected Outcome:
 
@@ -200,10 +299,10 @@ Handle failures gracefully.
 
 ## Topics
 
-- Skip
-- Retry
-- SkipLimit
-- RetryLimit
+* Skip
+* Retry
+* SkipLimit
+* RetryLimit
 
 ## Practical Work
 
@@ -211,8 +310,8 @@ Create invalid records.
 
 Configure:
 
-- skip invalid rows
-- continue processing
+* skip invalid rows
+* continue processing
 
 Expected Outcome:
 
@@ -228,17 +327,17 @@ Observe execution.
 
 ## Topics
 
-- JobExecutionListener
-- StepExecutionListener
-- ChunkListener
+* JobExecutionListener
+* StepExecutionListener
+* ChunkListener
 
 ## Practical Work
 
 Log:
 
-- start time
-- end time
-- number of processed rows
+* start time
+* end time
+* number of processed rows
 
 Expected Outcome:
 
@@ -254,8 +353,8 @@ Chain business processes.
 
 ## Topics
 
-- Sequential steps
-- Step transitions
+* Sequential steps
+* Step transitions
 
 ## Practical Work
 
@@ -281,8 +380,8 @@ Read directly from databases.
 
 ## Topics
 
-- JdbcCursorItemReader
-- JdbcPagingItemReader
+* JdbcCursorItemReader
+* JdbcPagingItemReader
 
 ## Practical Work
 
@@ -308,7 +407,7 @@ Produce export files.
 
 ## Topics
 
-- FlatFileItemWriter
+* FlatFileItemWriter
 
 ## Practical Work
 
@@ -330,8 +429,8 @@ Improve performance.
 
 ## Topics
 
-- TaskExecutor
-- Multi-threaded Step
+* TaskExecutor
+* Multi-threaded Step
 
 ## Practical Work
 
@@ -353,9 +452,9 @@ Scale large workloads.
 
 ## Topics
 
-- Partitioner
-- Worker Step
-- Master Step
+* Partitioner
+* Worker Step
+* Master Step
 
 ## Practical Work
 
@@ -375,17 +474,17 @@ Test batch applications.
 
 ## Topics
 
-- spring-batch-test
-- JobLauncherTestUtils
+* spring-batch-test
+* JobLauncherTestUtils
 
 ## Practical Work
 
 Test:
 
-- Reader
-- Processor
-- Writer
-- Job
+* Reader
+* Processor
+* Writer
+* Job
 
 Expected Outcome:
 
@@ -401,19 +500,19 @@ Prepare for enterprise environments.
 
 ## Topics
 
-- Idempotency
-- Restartability
-- Logging
-- Metrics
-- Monitoring
-- Error handling
+* Idempotency
+* Restartability
+* Logging
+* Metrics
+* Monitoring
+* Error handling
 
 ## Practical Work
 
 Simulate:
 
-- crash during processing
-- restart execution
+* crash during processing
+* restart execution
 
 Expected Outcome:
 
@@ -427,22 +526,22 @@ Understand real-world batch design.
 
 Features:
 
-- CSV import
-- Validation
-- Error management
-- Database persistence
-- CSV export
-- Reporting step
-- Parallel processing
-- Partitioning
-- Full test suite
+* CSV import
+* Validation
+* Error management
+* Database persistence
+* CSV export
+* Reporting step
+* Parallel processing
+* Partitioning
+* Full test suite
 
 Deliverables:
 
-- Production-ready batch application
-- PostgreSQL database
-- Docker environment
-- Monitoring hooks
+* Production-ready batch application
+* PostgreSQL database
+* Docker environment
+* Monitoring hooks
 
 Completion Level:
 
