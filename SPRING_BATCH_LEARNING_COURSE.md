@@ -4,6 +4,12 @@
 
 ## Progress
 
+Consider this course as a roadmap to learn Spring Batch in a modern way.
+Consider the following progression in order to start the course from the next phase:
+- Current status indicates what phases are completed and what phases are pending.
+- Last completed phase indicates the last phase that was completed.
+- Next phase indicates the next phase to be completed.
+
 ### Current Status
 
 - [x] Phase 0 - Environment Setup
@@ -30,21 +36,6 @@ Phase 1 - First Job
 
 Phase 2 - Chunk Processing Fundamentals
 
-### Current Knowledge Acquired
-
-- Spring Batch architecture overview
-- Job / Step / Tasklet hierarchy
-- JobRepository role
-- TransactionManager role
-- Batch metadata persistence
-- JobInstance vs JobExecution
-- StepExecution lifecycle
-- Batch statuses (STARTING, STARTED, COMPLETED, FAILED, STOPPED)
-- Restartability fundamentals
-- RunIdIncrementer usage
-- Automatic job launching with Spring Boot
-- JobInstanceAlreadyCompleteException troubleshooting
-
 ---
 
 ## Goal
@@ -65,9 +56,10 @@ The application evolves through successive iterations until it resembles a produ
 
 ## Instructor Role
 
+You have an instructor role in this course.
 The instructor acts as a Spring Batch professor and senior backend engineer.
 
-The learning approach prioritizes:
+### The learning approach
 
 * Understanding through implementation
 * Modern Spring Batch best practices
@@ -75,14 +67,19 @@ The learning approach prioritizes:
 * Incremental complexity
 * Hands-on coding
 
-The instructor should:
+### The instructor should:
 
 * Explain concepts briefly before implementation
 * Focus primarily on coding and practical exercises
-* Avoid excessive theory and long question sequences
 * Let the learner drive deeper discussions through questions
 * Explain architectural decisions when introducing new components
 * Use modern Spring Boot 4.x and Spring Batch 6.x APIs
+
+### The instructor should not:
+
+* Provide long theoretical explanations
+* Create long question sequences
+* Provide complete implementations without learner involvement
 
 For each phase:
 
@@ -94,7 +91,104 @@ For each phase:
 
 ---
 
-# Phase 0 - Environment Setup ✅ COMPLETED
+# Data structure
+
+## CSV input file
+
+```csv
+id,first_name,last_name,email,city,created_at
+1,Alice,Dubois,alice.dubois001@example.com,Nice,2024-01-02
+```
+
+## PostgreSQL database
+
+```sql
+CREATE TABLE IF NOT EXISTS customers
+(
+    id         BIGINT PRIMARY KEY,
+    first_name VARCHAR(100) NOT NULL,
+    last_name  VARCHAR(100) NOT NULL,
+    email      VARCHAR(255) NOT NULL UNIQUE,
+    city       VARCHAR(100) NOT NULL,
+    created_at DATE         NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS customer_import_error
+(
+    id            BIGSERIAL PRIMARY KEY,
+    raw_line      TEXT      NOT NULL,
+    error_message TEXT      NOT NULL,
+    created_at    TIMESTAMP NOT NULL DEFAULT NOW()
+);
+
+```
+
+## JPA Entity
+
+```java
+
+@Entity
+@Table(name = "customers")
+@Data
+public class CustomerEntity {
+
+    @Id
+    @Column(name = "id", nullable = false)
+    private Long id;
+
+    @Column(name = "first_name", nullable = false, length = 100)
+    private String firstName;
+
+    @Column(name = "last_name", nullable = false, length = 100)
+    private String lastName;
+
+    @Column(name = "email", nullable = false, unique = true, length = 255)
+    private String email;
+
+    @Column(name = "city", nullable = false, length = 100)
+    private String city;
+
+    @Column(name = "created_at", nullable = false)
+    private LocalDate createdAt;
+
+    /**
+     * Required by JPA.
+     */
+    protected CustomerEntity() {
+    }
+
+    public CustomerEntity(Long id,
+                          String firstName,
+                          String lastName,
+                          String email,
+                          String city,
+                          LocalDate createdAt) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.city = city;
+        this.createdAt = createdAt;
+    }
+}
+```
+
+## Customer Record DTO
+
+```java
+
+public record CustomerCsvRecord(Long id,
+                                String firstName,
+                                String lastName,
+                                String email,
+                                String city,
+                                LocalDate createdAt) {
+}
+```
+
+---
+
+# Phase 0 - Environment Setup
 
 ## Status
 
@@ -118,7 +212,7 @@ Understood:
 
 ---
 
-# Phase 1 - First Job ✅ COMPLETED
+# Phase 1 - First Job
 
 ## Status
 
