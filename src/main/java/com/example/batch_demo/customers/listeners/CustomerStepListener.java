@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
-public class CustomerImportStepListener implements StepExecutionListener {
+public class CustomerStepListener implements StepExecutionListener {
 
     @Override
     public void beforeStep(StepExecution stepExecution) {

@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
  */
 @Slf4j
 @Component
-public class CustomerImportJobListener implements JobExecutionListener {
+public class CustomerJobListener implements JobExecutionListener {
 
     @Override
     public void beforeJob(JobExecution jobExecution) {
@@ -28,7 +28,6 @@ public class CustomerImportJobListener implements JobExecutionListener {
 
     @Override
     public void afterJob(JobExecution jobExecution) {
-        assert jobExecution.getStartTime() != null;
         Duration duration = Duration.between(
                 jobExecution.getStartTime(),
                 jobExecution.getEndTime()

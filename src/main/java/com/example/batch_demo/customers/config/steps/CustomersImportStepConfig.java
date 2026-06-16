@@ -2,7 +2,7 @@ package com.example.batch_demo.customers.config.steps;
 
 import com.example.batch_demo.customers.domain.CustomerCsvRecord;
 import com.example.batch_demo.customers.listeners.CustomerChunkListener;
-import com.example.batch_demo.customers.listeners.CustomerImportStepListener;
+import com.example.batch_demo.customers.listeners.CustomerStepListener;
 import com.example.batch_demo.customers.listeners.CustomerSkipListener;
 import com.example.batch_demo.customers.persistence.entities.CustomerEntity;
 import org.springframework.batch.core.repository.JobRepository;
@@ -28,7 +28,7 @@ public class CustomersImportStepConfig {
             FlatFileItemReader<CustomerCsvRecord> reader,
             ItemProcessor<CustomerCsvRecord, CustomerEntity> customerProcessor,
             JpaItemWriter<CustomerEntity> writer,
-            CustomerImportStepListener stepListener,
+            CustomerStepListener stepListener,
             CustomerChunkListener chunkListener,
             CustomerSkipListener skipListener) {
 

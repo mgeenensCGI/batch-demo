@@ -1,7 +1,7 @@
 package com.example.batch_demo.customers.config.jobs;
 
 import com.example.batch_demo.customers.config.jobs.deciders.ImportSummaryDecider;
-import com.example.batch_demo.customers.listeners.CustomerImportJobListener;
+import com.example.batch_demo.customers.listeners.CustomerJobListener;
 import org.springframework.batch.core.job.Job;
 import org.springframework.batch.core.job.builder.JobBuilder;
 import org.springframework.batch.core.repository.JobRepository;
@@ -19,7 +19,7 @@ public class CustomersImportJobConfig {
                                   Step customersImportStep,
                                   Step generateSummaryReportStep,
                                   ImportSummaryDecider importSummaryDecider,
-                                  CustomerImportJobListener listener) {
+                                  CustomerJobListener listener) {
         return new JobBuilder(CUSTOMERS_IMPORT_JOB_NAME, jobRepository)
                 .listener(listener)
                 .start(customersImportStep)

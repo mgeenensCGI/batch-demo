@@ -6,13 +6,16 @@ public class CustomerBatchConstants {
 
     // JOBS
     public static final String CUSTOMERS_IMPORT_JOB_NAME = "customersImportJob";
+    public static final String CUSTOMER_REPORT_JOB_NAME = "customerReportJob";
 
     // STEPS
     public static final String CUSTOMERS_IMPORT_STEP_NAME = "customersImportStep";
     public static final String GENERATE_SUMMARY_REPORT_STEP_NAME = "generateSummaryReportStep";
+    public static final String CUSTOMER_REPORT_INSERT_STEP_NAME = "customersReportInsertStep";
 
     // PROCESSING
     public static final String CUSTOMERS_CSV_READER_NAME = "customerCsvReader";
+    public static final String CUSTOMERS_READER_NAME = "customerReader";
 
     // DECIDERS
     public static final String NO_DATA = "NO_DATA";

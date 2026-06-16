@@ -8,7 +8,10 @@ public class CustomersConstants {
     // Snake Case
     public static final String FIRST_NAME = "first_name";
     public static final String LAST_NAME = "last_name";
+    public static final String FULL_NAME = "full_name";
     public static final String CREATED_AT = "created_at";
+    public static final String CUSTOMER_REPORT = "customer_report";
+    public static final String CUSTOMER_ID = "customer_id";
 
     // Camel Case
     public static final String FIRSTNAME = "firstName";
