@@ -13,3 +13,11 @@ CREATE TABLE IF NOT EXISTS customer_import_error (
     error_message TEXT NOT NULL,
     created_at TIMESTAMP NOT NULL DEFAULT NOW()
     );
+
+CREATE TABLE IF NOT EXISTS customer_report
+(
+    customer_id BIGINT PRIMARY KEY,
+    full_name   VARCHAR(255) NOT NULL,
+    email       VARCHAR(255) NOT NULL,
+    city        VARCHAR(100) NOT NULL
+);

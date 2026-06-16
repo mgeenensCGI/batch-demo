@@ -16,6 +16,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
 
+import static com.example.batch_demo.customers.utils.CustomerBatchConstants.CUSTOMERS_IMPORT_STEP_NAME;
+
 @Configuration
 public class CustomersImportStepConfig {
 
@@ -30,7 +32,7 @@ public class CustomersImportStepConfig {
             CustomerChunkListener chunkListener,
             CustomerSkipListener skipListener) {
 
-        return new StepBuilder("customersImportStep", jobRepository)
+        return new StepBuilder(CUSTOMERS_IMPORT_STEP_NAME, jobRepository)
                 .<CustomerCsvRecord, CustomerEntity>chunk(10)
                 .reader(reader)
                 .processor(customerProcessor)

@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 
 import static com.example.batch_demo.customers.constants.CustomersConstants.*;
+import static com.example.batch_demo.customers.utils.CustomerBatchConstants.CUSTOMERS_CSV_READER_NAME;
 
 /**
  * Configure the customer.csv file Reader
@@ -22,7 +23,7 @@ public class CustomersImportReaderConfig {
     @StepScope
     public FlatFileItemReader<CustomerCsvRecord> customerCsvReader(@Value("#{jobParameters['inputFile']}") String inputFile) {
         return new FlatFileItemReaderBuilder<CustomerCsvRecord>()
-                .name("customerCsvReader")
+                .name(CUSTOMERS_CSV_READER_NAME)
                 .resource(new ClassPathResource(inputFile))
                 .linesToSkip(1) // Skip the header line
                 .delimited()

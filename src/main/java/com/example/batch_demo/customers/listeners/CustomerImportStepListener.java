@@ -24,15 +24,15 @@ public class CustomerImportStepListener implements StepExecutionListener {
 
         log.info(
                 """
-                Step [{}] completed.
-                Read Count      : {}
-                Write Count     : {}
-                Read Skip Count : {}
-                Process Skip    : {}
-                Write Skip      : {}
-                Commit Count    : {}
-                Rollback Count  : {}
-                """,
+                        Step [{}] completed.
+                        Read Count      : {}
+                        Write Count     : {}
+                        Read Skip Count : {}
+                        Process Skip    : {}
+                        Write Skip      : {}
+                        Commit Count    : {}
+                        Rollback Count  : {}
+                        """,
                 stepExecution.getStepName(),
                 stepExecution.getReadCount(),
                 stepExecution.getWriteCount(),

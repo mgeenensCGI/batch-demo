@@ -19,7 +19,7 @@ Consider the following progression in order to start the course from the next ph
 - [x] Phase 4 - Validation
 - [x] Phase 5 - Fault Tolerance
 - [x] Phase 6 - Listeners
-- [ ] Phase 7 - Multiple Steps
+- [x] Phase 7 - Multiple Steps
 - [ ] Phase 8 - Database Readers
 - [ ] Phase 9 - Flat File Generation
 - [ ] Phase 10 - Parallel Processing
@@ -30,11 +30,11 @@ Consider the following progression in order to start the course from the next ph
 
 ### Last Completed Phase
 
-Phase 6 - Listeners
+Phase 7 - Multiple Steps
 
 ### Next Phase
 
-Phase 7 - Multiple Steps
+Phase 8 - Database Readers
 
 ---
 
