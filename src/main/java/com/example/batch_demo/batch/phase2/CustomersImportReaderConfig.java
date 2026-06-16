@@ -2,6 +2,7 @@ package com.example.batch_demo.batch.phase2;
 
 import com.example.batch_demo.customers.domain.CustomerCsvRecord;
 import com.example.batch_demo.customers.mappers.CustomerCsvRecordFieldSetMapper;
+import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.infrastructure.item.file.FlatFileItemReader;
 import org.springframework.batch.infrastructure.item.file.builder.FlatFileItemReaderBuilder;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,6 +19,7 @@ import static com.example.batch_demo.customers.constants.CustomersConstants.*;
 public class CustomersImportReaderConfig {
 
     @Bean
+    @StepScope
     public FlatFileItemReader<CustomerCsvRecord> customerCsvReader(@Value("#{jobParameters['inputFile']}") String inputFile) {
         return new FlatFileItemReaderBuilder<CustomerCsvRecord>()
                 .name("customerCsvReader")

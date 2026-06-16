@@ -14,7 +14,7 @@ Consider the following progression in order to start the course from the next ph
 
 - [x] Phase 0 - Environment Setup
 - [x] Phase 1 - First Job
-- [ ] Phase 2 - Chunk Processing Fundamentals
+- [x] Phase 2 - Chunk Processing Fundamentals
 - [ ] Phase 3 - Job Parameters
 - [ ] Phase 4 - Validation
 - [ ] Phase 5 - Fault Tolerance
@@ -30,11 +30,11 @@ Consider the following progression in order to start the course from the next ph
 
 ### Last Completed Phase
 
-Phase 1 - First Job
+Phase 2 - Chunk Processing Fundamentals
 
 ### Next Phase
 
-Phase 2 - Chunk Processing Fundamentals
+Phase 3 - Job Parameters
 
 ---
 
