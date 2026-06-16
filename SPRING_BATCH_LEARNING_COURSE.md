@@ -15,7 +15,7 @@ Consider the following progression in order to start the course from the next ph
 - [x] Phase 0 - Environment Setup
 - [x] Phase 1 - First Job
 - [x] Phase 2 - Chunk Processing Fundamentals
-- [ ] Phase 3 - Job Parameters
+- [x] Phase 3 - Job Parameters
 - [ ] Phase 4 - Validation
 - [ ] Phase 5 - Fault Tolerance
 - [ ] Phase 6 - Listeners
@@ -30,11 +30,11 @@ Consider the following progression in order to start the course from the next ph
 
 ### Last Completed Phase
 
-Phase 2 - Chunk Processing Fundamentals
+Phase 3 - Job Parameters
 
 ### Next Phase
 
-Phase 3 - Job Parameters
+Phase 4 - Validation
 
 ---
 
@@ -49,6 +49,16 @@ This course avoids:
 * Legacy StepBuilderFactory
 
 The application evolves through successive iterations until it resembles a production-grade batch application.
+
+---
+
+# Stack
+
+- Spring Boot 4.x
+- Spring Batch 6.x
+- PostgreSQL 16.x (Dockerized)
+- Java 21
+- JPA
 
 ---
 
@@ -88,6 +98,7 @@ For each phase:
 3. Implement the feature
 4. Validate the result
 5. Highlight production considerations
+6. Proceed step by step and ask confirmation before moving to the next step
 
 ---
 

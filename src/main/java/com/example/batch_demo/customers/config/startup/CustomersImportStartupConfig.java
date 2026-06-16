@@ -1,4 +1,4 @@
-package com.example.batch_demo.batch.phase2;
+package com.example.batch_demo.customers.config.startup;
 
 import org.springframework.batch.core.BatchStatus;
 import org.springframework.batch.core.job.Job;

@@ -1,4 +1,4 @@
-package com.example.batch_demo.listeners;
+package com.example.batch_demo.customers.listeners;
 
 import com.example.batch_demo.customers.domain.CustomerCsvRecord;
 import com.example.batch_demo.customers.persistence.entities.CustomerEntity;

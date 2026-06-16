@@ -1,4 +1,4 @@
-package com.example.batch_demo.batch.phase2;
+package com.example.batch_demo.customers.batch;
 
 import com.example.batch_demo.customers.domain.CustomerCsvRecord;
 import com.example.batch_demo.customers.mappers.CustomerMapper;

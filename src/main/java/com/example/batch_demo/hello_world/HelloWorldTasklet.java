@@ -1,4 +1,4 @@
-package com.example.batch_demo.batch.phase1;
+package com.example.batch_demo.hello_world;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

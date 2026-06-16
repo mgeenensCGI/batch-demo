@@ -1,4 +1,4 @@
-package com.example.batch_demo.listeners;
+package com.example.batch_demo.customers.listeners;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

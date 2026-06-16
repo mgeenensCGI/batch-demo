@@ -1,4 +1,4 @@
-package com.example.batch_demo.batch.phase1;
+package com.example.batch_demo.hello_world;
 
 import org.springframework.batch.core.job.Job;
 import org.springframework.batch.core.job.builder.JobBuilder;

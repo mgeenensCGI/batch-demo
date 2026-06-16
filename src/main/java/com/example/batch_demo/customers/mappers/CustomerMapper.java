@@ -26,8 +26,8 @@ public class CustomerMapper {
 
         return new CustomerEntity(
                 source.id(),
-                trim(source.firstName()),
-                trim(source.lastName()),
+                trim(source.firstName()).toUpperCase(),
+                trim(source.lastName()).toUpperCase(),
                 trim(source.email()),
                 trim(source.city()),
                 source.createdAt()
