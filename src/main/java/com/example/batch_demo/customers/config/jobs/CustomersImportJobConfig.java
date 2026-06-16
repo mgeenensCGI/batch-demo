@@ -1,6 +1,6 @@
 package com.example.batch_demo.customers.config.jobs;
 
-import com.example.batch_demo.customers.listeners.CustomJobListener;
+import com.example.batch_demo.customers.listeners.CustomerImportJobListener;
 import org.springframework.batch.core.job.Job;
 import org.springframework.batch.core.job.builder.JobBuilder;
 import org.springframework.batch.core.repository.JobRepository;
@@ -12,9 +12,11 @@ import org.springframework.context.annotation.Configuration;
 public class CustomersImportJobConfig {
 
     @Bean
-    public Job customersImportJob(JobRepository jobRepository, Step customersImportStep) {
+    public Job customersImportJob(JobRepository jobRepository,
+                                  Step customersImportStep,
+                                  CustomerImportJobListener listener) {
         return new JobBuilder("customersImportJob", jobRepository)
-                .listener(new CustomJobListener())
+                .listener(listener)
                 .start(customersImportStep)
                 .build();
     }

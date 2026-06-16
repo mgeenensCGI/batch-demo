@@ -1,8 +1,9 @@
 package com.example.batch_demo.customers.config.steps;
 
 import com.example.batch_demo.customers.domain.CustomerCsvRecord;
-import com.example.batch_demo.customers.listeners.CustomStepListener;
 import com.example.batch_demo.customers.listeners.CustomerChunkListener;
+import com.example.batch_demo.customers.listeners.CustomerImportStepListener;
+import com.example.batch_demo.customers.listeners.CustomerSkipListener;
 import com.example.batch_demo.customers.persistence.entities.CustomerEntity;
 import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.step.Step;
@@ -24,7 +25,10 @@ public class CustomersImportStepConfig {
             PlatformTransactionManager transactionManager,
             FlatFileItemReader<CustomerCsvRecord> reader,
             ItemProcessor<CustomerCsvRecord, CustomerEntity> customerProcessor,
-            JpaItemWriter<CustomerEntity> writer) {
+            JpaItemWriter<CustomerEntity> writer,
+            CustomerImportStepListener stepListener,
+            CustomerChunkListener chunkListener,
+            CustomerSkipListener skipListener) {
 
         return new StepBuilder("customersImportStep", jobRepository)
                 .<CustomerCsvRecord, CustomerEntity>chunk(10)
@@ -34,8 +38,9 @@ public class CustomersImportStepConfig {
                 .faultTolerant()
                 .skip(ValidationException.class)
                 .skipLimit(100)
-                .listener(new CustomStepListener())
-                .listener(new CustomerChunkListener())
+                .listener(stepListener)
+                .listener(chunkListener)
+                .listener(skipListener)
                 .transactionManager(transactionManager)
                 .build();
     }

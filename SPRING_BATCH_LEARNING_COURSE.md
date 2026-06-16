@@ -18,7 +18,7 @@ Consider the following progression in order to start the course from the next ph
 - [x] Phase 3 - Job Parameters
 - [x] Phase 4 - Validation
 - [x] Phase 5 - Fault Tolerance
-- [ ] Phase 6 - Listeners
+- [x] Phase 6 - Listeners
 - [ ] Phase 7 - Multiple Steps
 - [ ] Phase 8 - Database Readers
 - [ ] Phase 9 - Flat File Generation
@@ -30,11 +30,11 @@ Consider the following progression in order to start the course from the next ph
 
 ### Last Completed Phase
 
-Phase 5 - Fault Tolerance
+Phase 6 - Listeners
 
 ### Next Phase
 
-Phase 6 - Listeners
+Phase 7 - Multiple Steps
 
 ---
 
@@ -95,7 +95,7 @@ For each phase:
 
 1. Explain the objective
 2. Explain the minimal required concepts
-3. Implement the feature
+3. Implement the feature (with learner involvement)
 4. Validate the result
 5. Highlight production considerations
 6. Proceed step by step and ask confirmation before moving to the next step
