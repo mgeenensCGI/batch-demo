@@ -16,8 +16,8 @@ Consider the following progression in order to start the course from the next ph
 - [x] Phase 1 - First Job
 - [x] Phase 2 - Chunk Processing Fundamentals
 - [x] Phase 3 - Job Parameters
-- [ ] Phase 4 - Validation
-- [ ] Phase 5 - Fault Tolerance
+- [x] Phase 4 - Validation
+- [x] Phase 5 - Fault Tolerance
 - [ ] Phase 6 - Listeners
 - [ ] Phase 7 - Multiple Steps
 - [ ] Phase 8 - Database Readers
@@ -30,11 +30,11 @@ Consider the following progression in order to start the course from the next ph
 
 ### Last Completed Phase
 
-Phase 3 - Job Parameters
+Phase 5 - Fault Tolerance
 
 ### Next Phase
 
-Phase 4 - Validation
+Phase 6 - Listeners
 
 ---
 
@@ -435,6 +435,7 @@ Observe execution.
 * JobExecutionListener
 * StepExecutionListener
 * ChunkListener
+* SkipListener
 
 ## Practical Work
 

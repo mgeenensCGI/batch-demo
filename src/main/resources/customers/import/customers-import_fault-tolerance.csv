@@ -1,0 +1,4 @@
+id,first_name,last_name,email,city,created_at
+122,Luffy,Monkey D,mdl@example.com,Tokyo,2024-01-02
+123,Barbe,Noire,invalid-email,Paris,2024-01-03
+124,Shanks,Le Roux,slr@example.com,Lyon,2024-01-04

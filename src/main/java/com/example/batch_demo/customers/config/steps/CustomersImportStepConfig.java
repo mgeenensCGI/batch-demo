@@ -10,6 +10,7 @@ import org.springframework.batch.core.step.builder.StepBuilder;
 import org.springframework.batch.infrastructure.item.ItemProcessor;
 import org.springframework.batch.infrastructure.item.database.JpaItemWriter;
 import org.springframework.batch.infrastructure.item.file.FlatFileItemReader;
+import org.springframework.batch.infrastructure.item.validator.ValidationException;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -30,6 +31,9 @@ public class CustomersImportStepConfig {
                 .reader(reader)
                 .processor(customerProcessor)
                 .writer(writer)
+                .faultTolerant()
+                .skip(ValidationException.class)
+                .skipLimit(100)
                 .listener(new CustomStepListener())
                 .listener(new CustomerChunkListener())
                 .transactionManager(transactionManager)
