@@ -1,4 +1,4 @@
-package com.example.batch_demo.customers.config.process;
+package com.example.batch_demo.customers.config.processes.writers;
 
 import com.example.batch_demo.customers.persistence.entities.CustomerEntity;
 import jakarta.persistence.EntityManagerFactory;

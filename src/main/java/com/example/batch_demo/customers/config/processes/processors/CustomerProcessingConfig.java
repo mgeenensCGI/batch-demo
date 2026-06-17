@@ -1,8 +1,8 @@
-package com.example.batch_demo.customers.config.process;
+package com.example.batch_demo.customers.config.processes.processors;
 
-import com.example.batch_demo.customers.batch.CustomerItemProcessor;
 import com.example.batch_demo.customers.domain.CustomerCsvRecord;
 import com.example.batch_demo.customers.persistence.entities.CustomerEntity;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.infrastructure.item.ItemProcessor;
 import org.springframework.batch.infrastructure.item.support.CompositeItemProcessor;
 import org.springframework.batch.infrastructure.item.validator.BeanValidatingItemProcessor;
@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
 
+@Slf4j
 @Configuration
 public class CustomerProcessingConfig {
 
@@ -27,6 +28,7 @@ public class CustomerProcessingConfig {
                 customerValidationProcessor,
                 customerItemProcessor
         ));
+
         return processor;
     }
 }

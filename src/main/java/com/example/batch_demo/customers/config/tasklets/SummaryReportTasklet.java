@@ -9,7 +9,7 @@ import org.springframework.batch.core.step.tasklet.Tasklet;
 import org.springframework.batch.infrastructure.repeat.RepeatStatus;
 import org.springframework.stereotype.Component;
 
-import static com.example.batch_demo.customers.utils.CustomerBatchConstants.CUSTOMERS_IMPORT_STEP_NAME;
+import static com.example.batch_demo.customers.constants.CustomerBatchConstants.CUSTOMERS_IMPORT_STEP_NAME;
 
 @Slf4j
 @Component

@@ -9,3 +9,5 @@ servers:
 paths:
   /customer-report/run:
     $ref: './paths/customer-report-run.yaml'
+  /customer-report/export:
+    $ref: './paths/customer-report-export.yaml'

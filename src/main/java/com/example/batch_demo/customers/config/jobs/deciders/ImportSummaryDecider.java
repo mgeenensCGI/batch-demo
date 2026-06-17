@@ -8,7 +8,7 @@ import org.springframework.batch.core.job.flow.JobExecutionDecider;
 import org.springframework.batch.core.step.StepExecution;
 import org.springframework.stereotype.Component;
 
-import static com.example.batch_demo.customers.utils.CustomerBatchConstants.NO_DATA;
+import static com.example.batch_demo.customers.constants.CustomerBatchConstants.NO_DATA;
 
 @Slf4j
 @Component

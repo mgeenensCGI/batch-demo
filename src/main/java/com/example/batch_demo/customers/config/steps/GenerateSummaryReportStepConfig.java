@@ -7,7 +7,7 @@ import org.springframework.batch.core.step.builder.StepBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import static com.example.batch_demo.customers.utils.CustomerBatchConstants.GENERATE_SUMMARY_REPORT_STEP_NAME;
+import static com.example.batch_demo.customers.constants.CustomerBatchConstants.GENERATE_SUMMARY_REPORT_STEP_NAME;
 
 @Configuration
 public class GenerateSummaryReportStepConfig {

@@ -20,8 +20,8 @@ Consider the following progression in order to start the course from the next ph
 - [x] Phase 5 - Fault Tolerance
 - [x] Phase 6 - Listeners
 - [x] Phase 7 - Multiple Steps
-- [ ] Phase 8 - Database Readers
-- [ ] Phase 9 - Flat File Generation
+- [x] Phase 8 - Database Readers
+- [x] Phase 9 - Flat File Generation
 - [ ] Phase 10 - Parallel Processing
 - [ ] Phase 11 - Partitioning
 - [ ] Phase 12 - Batch Testing
@@ -30,11 +30,11 @@ Consider the following progression in order to start the course from the next ph
 
 ### Last Completed Phase
 
-Phase 7 - Multiple Steps
+Phase 9 - Flat File Generation
 
 ### Next Phase
 
-Phase 8 - Database Readers
+Phase 10 - Parallel Processing
 
 ---
 
@@ -59,6 +59,7 @@ The application evolves through successive iterations until it resembles a produ
 - PostgreSQL 16.x (Dockerized)
 - Java 21
 - JPA
+- OpenAPI 3.0.3 (yaml configuration)
 
 ---
 
@@ -77,19 +78,19 @@ The instructor acts as a Spring Batch professor and senior backend engineer.
 * Incremental complexity
 * Hands-on coding
 
-### The instructor should:
+### Instructions
 
 * Explain concepts briefly before implementation
 * Focus primarily on coding and practical exercises
 * Let the learner drive deeper discussions through questions
 * Explain architectural decisions when introducing new components
-* Use modern Spring Boot 4.x and Spring Batch 6.x APIs
+* Use modern Spring Boot 4.x
+* Use Spring Batch 6.x APIs documentation as reference
 
-### The instructor should not:
-
-* Provide long theoretical explanations
-* Create long question sequences
-* Provide complete implementations without learner involvement
+* DO NOT Provide long theoretical explanations
+* DO NOT Create long question sequences
+* DO NOT Provide complete implementations without learner involvement
+* DO NOT Use annotations for openapi documentation
 
 For each phase:
 

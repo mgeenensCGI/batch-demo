@@ -1,4 +1,4 @@
-package com.example.batch_demo.customers.config.process;
+package com.example.batch_demo.customers.config.processes.processors;
 
 import com.example.batch_demo.customers.mappers.CustomerReportMapper;
 import com.example.batch_demo.customers.persistence.entities.CustomerEntity;

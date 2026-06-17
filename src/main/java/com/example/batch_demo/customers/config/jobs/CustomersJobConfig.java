@@ -9,10 +9,10 @@ import org.springframework.batch.core.step.Step;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import static com.example.batch_demo.customers.utils.CustomerBatchConstants.*;
+import static com.example.batch_demo.customers.constants.CustomerBatchConstants.*;
 
 @Configuration
-public class CustomersImportJobConfig {
+public class CustomersJobConfig {
 
     @Bean
     public Job customersImportJob(JobRepository jobRepository,

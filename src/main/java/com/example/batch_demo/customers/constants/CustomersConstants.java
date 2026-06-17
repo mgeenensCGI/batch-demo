@@ -17,10 +17,15 @@ public class CustomersConstants {
     public static final String FIRSTNAME = "firstName";
     public static final String LASTNAME = "lastName";
     public static final String CREATEDAT = "createdAt";
+    public static final String CUSTOMERID = "customerId";
+    public static final String FULLNAME = "fullName";
 
     // Common
     public static final String CUSTOMERS = "customers";
     public static final String ID = "id";
     public static final String EMAIL = "email";
     public static final String CITY = "city";
+
+    // Flat file headers
+    public static final String CUSTOMER_REPORT_FILE_HEADER = String.join(",", CUSTOMER_ID, FULL_NAME, EMAIL, CITY);
 }

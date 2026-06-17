@@ -16,6 +16,8 @@ import org.springframework.core.io.support.ResourcePatternResolver;
 import java.util.Arrays;
 import java.util.Comparator;
 
+import static com.example.batch_demo.customers.constants.CustomerBatchConstants.INPUT_FILE;
+
 @Configuration
 public class CustomersImportStartupConfig {
 
@@ -42,7 +44,7 @@ public class CustomersImportStartupConfig {
         String inputFile = "customers/import/" + file.getFilename();
 
         JobParameters jobParameters = new JobParametersBuilder()
-                .addString("inputFile", inputFile)
+                .addString(INPUT_FILE, inputFile)
                 .toJobParameters();
 
         JobExecution lastExecution =

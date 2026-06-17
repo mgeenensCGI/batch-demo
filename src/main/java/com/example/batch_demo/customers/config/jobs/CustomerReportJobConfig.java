@@ -8,18 +8,33 @@ import org.springframework.batch.core.step.Step;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import static com.example.batch_demo.customers.utils.CustomerBatchConstants.CUSTOMER_REPORT_JOB_NAME;
+import static com.example.batch_demo.customers.constants.CustomerBatchConstants.CUSTOMER_REPORT_EXPORT_JOB_NAME;
+import static com.example.batch_demo.customers.constants.CustomerBatchConstants.CUSTOMER_REPORT_INSERT_JOB_NAME;
 
 @Configuration
 public class CustomerReportJobConfig {
 
     @Bean
-    public Job customerReportJob(JobRepository jobRepository,
-                                 Step customersReportInsertStep,
-                                 CustomerJobListener listener) {
-        return new JobBuilder(CUSTOMER_REPORT_JOB_NAME, jobRepository)
+    public Job customerReportInsertJob(JobRepository jobRepository,
+                                       Step customersReportInsertStep,
+                                       CustomerJobListener listener) {
+        return new JobBuilder(CUSTOMER_REPORT_INSERT_JOB_NAME, jobRepository)
                 .listener(listener)
                 .start(customersReportInsertStep)
+                .build();
+    }
+
+    @Bean
+    public Job customerReportExportJob(
+            JobRepository jobRepository,
+            Step customerReportExportStep,
+            CustomerJobListener listener) {
+
+        return new JobBuilder(
+                CUSTOMER_REPORT_EXPORT_JOB_NAME,
+                jobRepository)
+                .listener(listener)
+                .start(customerReportExportStep)
                 .build();
     }
 }

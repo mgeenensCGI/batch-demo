@@ -1,4 +1,4 @@
-package com.example.batch_demo.customers.config.process;
+package com.example.batch_demo.customers.config.processes.writers;
 
 import com.example.batch_demo.customers.persistence.entities.CustomerReportEntity;
 import org.springframework.batch.infrastructure.item.database.JdbcBatchItemWriter;
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
 
-import static com.example.batch_demo.customers.utils.SqlQueryConstants.INSERT_CUSTOMER_REPORT;
+import static com.example.batch_demo.customers.constants.SqlQueryConstants.INSERT_CUSTOMER_REPORT;
 
 @Configuration
 public class CustomerReportWriterConfig {

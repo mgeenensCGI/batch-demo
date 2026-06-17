@@ -9,14 +9,17 @@ import org.springframework.batch.core.step.builder.StepBuilder;
 import org.springframework.batch.infrastructure.item.ItemProcessor;
 import org.springframework.batch.infrastructure.item.database.JdbcBatchItemWriter;
 import org.springframework.batch.infrastructure.item.database.JdbcCursorItemReader;
+import org.springframework.batch.infrastructure.item.database.JdbcPagingItemReader;
+import org.springframework.batch.infrastructure.item.file.FlatFileItemWriter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
 
-import static com.example.batch_demo.customers.utils.CustomerBatchConstants.CUSTOMER_REPORT_INSERT_STEP_NAME;
+import static com.example.batch_demo.customers.constants.CustomerBatchConstants.CUSTOMER_REPORT_EXPORT_STEP_NAME;
+import static com.example.batch_demo.customers.constants.CustomerBatchConstants.CUSTOMER_REPORT_INSERT_STEP_NAME;
 
 @Configuration
-public class CustomersReportInsertStepConfig {
+public class CustomersReportStepConfig {
 
     @Bean
     public Step customersReportInsertStep(
@@ -35,4 +38,21 @@ public class CustomersReportInsertStepConfig {
                 .transactionManager(transactionManager)
                 .build();
     }
+
+    @Bean
+    public Step customerReportExportStep(
+            JobRepository jobRepository,
+            PlatformTransactionManager transactionManager,
+            JdbcPagingItemReader<CustomerReportEntity> customerReportReader,
+            FlatFileItemWriter<CustomerReportEntity> customerReportWriter) {
+
+        return new StepBuilder(CUSTOMER_REPORT_EXPORT_STEP_NAME,jobRepository)
+                .<CustomerReportEntity, CustomerReportEntity>chunk(
+                        100)
+                .transactionManager(transactionManager)
+                .reader(customerReportReader)
+                .writer(customerReportWriter)
+                .build();
+    }
+
 }

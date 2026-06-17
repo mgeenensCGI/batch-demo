@@ -1,8 +1,8 @@
 post:
   tags:
     - Customer Report
-  summary: Run a customer report
-  description: This endpoint triggers the generation of a customer report and returns.
+  summary: Export a customer report
+  description: This endpoint triggers the export of a customer report and returns.
   responses:
     '202':
       description: Job launch accepted
