@@ -5,8 +5,13 @@ public class CustomerBatchConstants {
     private CustomerBatchConstants() {}
 
     // JOBS
+    public static final String CUSTOMER_WORKFLOW_JOB_NAME = "customerWorkflowJob";
     public static final String CUSTOMERS_IMPORT_JOB_NAME = "customersImportJob";
     public static final String CUSTOMER_REPORT_JOB_NAME = "customerReportJob";
+
+    // JOB STEPs
+    public static final String CUSTOMER_IMPORT_JOB_STEP_NAME = "customersImportJobStep";
+    public static final String CUSTOMER_REPORT_JOB_STEP_NAME = "customerReportJobStep";
 
     // STEPS
     public static final String CUSTOMERS_IMPORT_STEP_NAME = "customersImportStep";
@@ -20,5 +25,8 @@ public class CustomerBatchConstants {
     // DECIDERS
     public static final String NO_DATA = "NO_DATA";
     public static final String GENERATE_SUMMARY = "GENERATE_SUMMARY";
+
+    // PARAMETERS
+    public static final String RUN_ID = "run.id";
 
 }

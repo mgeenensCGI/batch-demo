@@ -1,0 +1,19 @@
+type: object
+required:
+  - error
+  - message
+  - jobName
+  - timestamp
+properties:
+  error:
+    type: string
+    example: JOB_LAUNCH_ERROR
+  message:
+    type: string
+    example: Customer report job is already running
+  jobName:
+    type: string
+    example: CustomerReportJob
+  timestamp:
+    type: string
+    format: date-time

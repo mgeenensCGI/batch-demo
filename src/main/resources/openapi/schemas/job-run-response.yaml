@@ -1,0 +1,10 @@
+type: object
+properties:
+  jobName:
+    type: string
+  executionId:
+    type: integer
+  status:
+    type: string
+  message:
+    type: string

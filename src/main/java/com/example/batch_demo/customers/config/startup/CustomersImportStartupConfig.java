@@ -20,7 +20,7 @@ import java.util.Comparator;
 public class CustomersImportStartupConfig {
 
     @Bean
-    public ApplicationRunner customersImportRunner(
+    public ApplicationRunner customersWorkflowRunner(
             ResourcePatternResolver resolver,
             JobRepository jobRepository,
             JobOperator jobOperator,

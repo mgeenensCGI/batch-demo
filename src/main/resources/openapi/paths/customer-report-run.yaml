@@ -1,0 +1,30 @@
+post:
+  tags:
+    - Customer Report
+  summary: Run a customer report
+  description: Run a customer report. This endpoint triggers the generation of a customer report and returns
+  responses:
+    '202':
+      description: Job launch accepted
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/job-run-response.yaml'
+    '400':
+      description: Invalid job parameters
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/batch-error-response.yaml'
+    '409':
+      description: Job already running or cannot be restarted
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/batch-error-response.yaml'
+    '500':
+      description: Unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/batch-error-response.yaml'

@@ -1,0 +1,11 @@
+openapi: 3.0.3
+info:
+  title: Batch Demo
+  version: 1.0.0
+
+servers:
+  - url: /api/batch
+
+paths:
+  /customer-report/run:
+    $ref: './paths/customer-report-run.yaml'

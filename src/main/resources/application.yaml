@@ -23,6 +23,14 @@ spring:
     init:
       mode: always
 
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: alpha
+  packages-to-scan: com.example.batch_demo.customers.controller
+
 logging:
   level:
     org.springframework.batch: INFO
