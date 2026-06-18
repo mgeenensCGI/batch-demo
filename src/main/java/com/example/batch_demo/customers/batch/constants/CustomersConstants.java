@@ -1,5 +1,7 @@
 package com.example.batch_demo.customers.batch.constants;
 
+import java.util.List;
+
 public class CustomersConstants {
 
     private CustomersConstants() {
@@ -28,4 +30,7 @@ public class CustomersConstants {
 
     // Flat file headers
     public static final String CUSTOMER_REPORT_FILE_HEADER = String.join(",", CUSTOMER_ID, FULL_NAME, EMAIL, CITY);
+
+    // Cities
+    public static final List<String> CITIES = List.of("Lyon", "Lille", "Nice", "Tokyo", "Paris", "Amsterdam");
 }

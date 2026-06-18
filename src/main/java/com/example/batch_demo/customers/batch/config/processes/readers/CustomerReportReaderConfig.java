@@ -18,6 +18,7 @@ import javax.sql.DataSource;
 
 import java.util.Map;
 
+import static com.example.batch_demo.customers.batch.constants.CustomerBatchConstants.CUSTOMER_REPORT_READER_NAME;
 import static com.example.batch_demo.customers.batch.constants.CustomersConstants.CUSTOMER_ID;
 import static com.example.batch_demo.customers.batch.constants.CustomerBatchConstants.CUSTOMERS_READER_NAME;
 import static com.example.batch_demo.customers.batch.constants.SqlQueryConstants.*;
@@ -59,7 +60,7 @@ public class CustomerReportReaderConfig {
         );
 
         return new JdbcPagingItemReaderBuilder<CustomerReportEntity>()
-                .name("customerReportReader")
+                .name(CUSTOMER_REPORT_READER_NAME)
                 .dataSource(dataSource)
                 .queryProvider(queryProvider)
                 .rowMapper(rowMapper)

@@ -1,4 +1,4 @@
-package com.example.batch_demo.customers.batch.config.processes.processors;
+package com.example.batch_demo.customers.batch.processes.processors;
 
 import com.example.batch_demo.customers.domain.CustomerCsvRecord;
 import com.example.batch_demo.customers.mappers.CustomerMapper;

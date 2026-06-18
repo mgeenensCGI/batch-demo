@@ -1,6 +1,6 @@
 package com.example.batch_demo.customers.batch.config.jobs;
 
-import com.example.batch_demo.customers.batch.config.jobs.deciders.ImportSummaryDecider;
+import com.example.batch_demo.customers.batch.deciders.ImportSummaryDecider;
 import com.example.batch_demo.customers.batch.listeners.CustomerJobListener;
 import org.springframework.batch.core.job.Job;
 import org.springframework.batch.core.job.builder.JobBuilder;
@@ -24,12 +24,23 @@ public class CustomersJobConfig {
                 .listener(listener)
                 .start(customersImportStep)
                 .next(importSummaryDecider)
-                    .on(GENERATE_SUMMARY)
-                    .to(generateSummaryReportStep)
+                .on(GENERATE_SUMMARY)
+                .to(generateSummaryReportStep)
                 .from(importSummaryDecider)
-                    .on(NO_DATA)
-                    .end()
+                .on(NO_DATA)
                 .end()
+                .end()
+                .build();
+    }
+
+    @Bean
+    public Job partitioningJob(CustomerJobListener listener,
+                               JobRepository jobRepository,
+                               Step masterPartitionStep) {
+
+        return new JobBuilder(PARTITIONING_JOB_NAME,jobRepository)
+                .listener(listener)
+                .start(masterPartitionStep)
                 .build();
     }
 

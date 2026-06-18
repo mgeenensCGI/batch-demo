@@ -1,6 +1,6 @@
 package com.example.batch_demo.customers.batch.config.steps;
 
-import com.example.batch_demo.customers.batch.config.tasklets.SummaryReportTasklet;
+import com.example.batch_demo.customers.batch.processes.tasklets.SummaryReportTasklet;
 import org.springframework.batch.core.repository.JobRepository;
 import org.springframework.batch.core.step.Step;
 import org.springframework.batch.core.step.builder.StepBuilder;

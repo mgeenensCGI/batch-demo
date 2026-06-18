@@ -1,4 +1,4 @@
-package com.example.batch_demo.customers.batch.config.tasklets;
+package com.example.batch_demo.customers.batch.processes.tasklets;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.core.job.JobExecution;

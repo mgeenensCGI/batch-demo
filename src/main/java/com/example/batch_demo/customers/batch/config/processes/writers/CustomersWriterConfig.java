@@ -17,4 +17,12 @@ public class CustomersWriterConfig {
                 .usePersist(true) // Use persist instead of merge for new entities
                 .build();
     }
+
+    @Bean
+    public JpaItemWriter<CustomerEntity> updateItemWriter(EntityManagerFactory entityManagerFactory) {
+        return new JpaItemWriterBuilder<CustomerEntity>()
+                .entityManagerFactory(entityManagerFactory)
+                .usePersist(false)
+                .build();
+    }
 }

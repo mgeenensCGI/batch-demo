@@ -3,10 +3,12 @@ package com.example.batch_demo.customers.batch.config.threads;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.task.AsyncTaskExecutor;
+import org.springframework.core.task.SimpleAsyncTaskExecutor;
+import org.springframework.core.task.TaskExecutor;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 @Configuration
-public class BatchThreadingConfiguration {
+public class BatchThreadingConfig {
 
     @Bean
     public AsyncTaskExecutor batchTaskExecutor() {
@@ -20,6 +22,17 @@ public class BatchThreadingConfiguration {
         executor.initialize();
 
         return executor;
+    }
+
+    @Bean
+    public TaskExecutor partitionTaskExecutor() {
+
+        SimpleAsyncTaskExecutor taskExecutor =
+                new SimpleAsyncTaskExecutor("partition-");
+
+        taskExecutor.setConcurrencyLimit(4);
+
+        return taskExecutor;
     }
 
 }

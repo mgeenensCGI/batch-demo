@@ -11,6 +11,18 @@ public class SqlQueryConstants {
             FROM customers
             ORDER BY id
             """;
+    public static final String FETCH_ALL_CUSTOMERS_SELECT_CLAUSE = """
+            id,
+            first_name,
+            last_name,
+            email,
+            city,
+            created_at
+            """;
+    public static final String FETCH_ALL_CUSTOMERS_BY_CITY_WHERE_CLAUSE = "city = '%s'";
+    public static final String FETCH_CUSTOMER_FROM_CLAUSE = """
+            customers
+            """;
 
     // CUSTOMER REPORT
     public static final String FETCH_CUSTOMER_REPORT_SELECT_CLAUSE = """

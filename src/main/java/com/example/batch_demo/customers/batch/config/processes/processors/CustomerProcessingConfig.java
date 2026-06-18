@@ -1,5 +1,7 @@
 package com.example.batch_demo.customers.batch.config.processes.processors;
 
+import com.example.batch_demo.customers.batch.processes.processors.CityProcessor;
+import com.example.batch_demo.customers.batch.processes.processors.CustomerItemProcessor;
 import com.example.batch_demo.customers.domain.CustomerCsvRecord;
 import com.example.batch_demo.customers.persistence.entities.CustomerEntity;
 import lombok.extern.slf4j.Slf4j;
@@ -30,5 +32,10 @@ public class CustomerProcessingConfig {
         ));
 
         return processor;
+    }
+
+    @Bean
+    public ItemProcessor<CustomerEntity, CustomerEntity> customerCityProcessor(CityProcessor cityProcessor) {
+        return cityProcessor;
     }
 }
