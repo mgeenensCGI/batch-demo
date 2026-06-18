@@ -6,8 +6,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 
-import static com.example.batch_demo.customers.constants.CustomersConstants.*;
-
 @Entity
 @Table(name = CUSTOMER_REPORT)
 @Data

@@ -4,7 +4,6 @@ import com.example.batch_demo.customers.domain.CustomerCsvRecord;
 import org.springframework.batch.infrastructure.item.file.mapping.FieldSetMapper;
 import org.springframework.batch.infrastructure.item.file.transform.FieldSet;
 
-import static com.example.batch_demo.customers.constants.CustomersConstants.*;
 import static com.example.batch_demo.utils.DateUtils.ISO_LOCAL_DATE_FORMATTER;
 import static com.example.batch_demo.utils.DateUtils.parseDate;
 

@@ -8,8 +8,6 @@ import lombok.Data;
 
 import java.time.LocalDate;
 
-import static com.example.batch_demo.customers.constants.CustomersConstants.*;
-
 @Entity
 @Table(name = CUSTOMERS)
 @Data

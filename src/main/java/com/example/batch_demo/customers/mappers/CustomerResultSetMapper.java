@@ -5,8 +5,6 @@ import com.example.batch_demo.customers.persistence.entities.CustomerEntity;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import static com.example.batch_demo.customers.constants.CustomersConstants.*;
-
 public class CustomerResultSetMapper {
 
     private CustomerResultSetMapper() {

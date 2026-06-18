@@ -22,7 +22,7 @@ Consider the following progression in order to start the course from the next ph
 - [x] Phase 7 - Multiple Steps
 - [x] Phase 8 - Database Readers
 - [x] Phase 9 - Flat File Generation
-- [ ] Phase 10 - Parallel Processing
+- [x] Phase 10 - Parallel Processing
 - [ ] Phase 11 - Partitioning
 - [ ] Phase 12 - Batch Testing
 - [ ] Phase 13 - Production Concerns
@@ -30,11 +30,11 @@ Consider the following progression in order to start the course from the next ph
 
 ### Last Completed Phase
 
-Phase 9 - Flat File Generation
+Phase 10 - Parallel Processing
 
 ### Next Phase
 
-Phase 10 - Parallel Processing
+Phase 11 - Partitioning
 
 ---
 
