@@ -1,7 +1,7 @@
 package com.example.batch_demo.customers.service;
 
-import com.example.batch_demo.customers.domain.JobRunResponse;
 import com.example.batch_demo.customers.batch.utils.ExportUtils;
+import com.example.batch_demo.customers.domain.JobRunResponse;
 import org.springframework.batch.core.job.Job;
 import org.springframework.batch.core.job.JobExecution;
 import org.springframework.batch.core.job.parameters.JobParameters;
@@ -11,8 +11,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-import static com.example.batch_demo.customers.mappers.JobRunResponseMapper.mapExecutionToResponse;
+import static com.example.batch_demo.customers.batch.constants.ExportConstants.*;
 import static com.example.batch_demo.customers.batch.utils.JobParametersUtils.buildJobParameters;
+import static com.example.batch_demo.customers.mappers.JobRunResponseMapper.mapExecutionToResponse;
 
 /**
  * Owns the execution rules for the customer report batch job.

@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 
 import static com.example.batch_demo.customers.batch.constants.CustomerBatchConstants.CUSTOMERS_CSV_READER_NAME;
+import static com.example.batch_demo.customers.batch.constants.CustomersConstants.*;
 
 /**
  * Configure the customer.csv file Reader

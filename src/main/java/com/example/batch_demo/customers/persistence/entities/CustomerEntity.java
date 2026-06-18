@@ -8,6 +8,8 @@ import lombok.Data;
 
 import java.time.LocalDate;
 
+import static com.example.batch_demo.customers.batch.constants.CustomersConstants.*;
+
 @Entity
 @Table(name = CUSTOMERS)
 @Data
@@ -23,7 +25,7 @@ public class CustomerEntity {
     @Column(name = LAST_NAME, nullable = false, length = 100)
     private String lastName;
 
-    @Column(name = EMAIL, nullable = false, unique = true, length = 255)
+    @Column(name = EMAIL, nullable = false, unique = true)
     private String email;
 
     @Column(name = CITY, nullable = false, length = 100)

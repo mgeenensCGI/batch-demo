@@ -9,6 +9,8 @@ import org.springframework.batch.core.step.Step;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import static com.example.batch_demo.customers.batch.constants.CustomerBatchConstants.*;
+
 @Configuration
 public class CustomersJobConfig {
 

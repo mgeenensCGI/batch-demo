@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.FileSystemResource;
 
 import static com.example.batch_demo.customers.batch.constants.CustomerBatchConstants.CUSTOMER_REPORT_FILE_WRITER_NAME;
+import static com.example.batch_demo.customers.batch.constants.CustomersConstants.*;
 
 @Configuration
 public class FlatFileWriterConfig {

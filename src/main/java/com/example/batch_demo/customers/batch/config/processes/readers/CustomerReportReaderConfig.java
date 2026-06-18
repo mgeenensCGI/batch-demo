@@ -20,6 +20,7 @@ import java.util.Map;
 
 import static com.example.batch_demo.customers.batch.constants.CustomersConstants.CUSTOMER_ID;
 import static com.example.batch_demo.customers.batch.constants.CustomerBatchConstants.CUSTOMERS_READER_NAME;
+import static com.example.batch_demo.customers.batch.constants.SqlQueryConstants.*;
 
 @Configuration
 public class CustomerReportReaderConfig {

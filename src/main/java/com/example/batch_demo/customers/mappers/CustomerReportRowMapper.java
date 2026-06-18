@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import static com.example.batch_demo.customers.batch.constants.CustomersConstants.*;
+
 @Component
 public class CustomerReportRowMapper implements RowMapper<CustomerReportEntity> {
 
