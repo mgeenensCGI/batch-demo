@@ -6,6 +6,7 @@
 
 Consider this course as a roadmap to learn Spring Batch in a modern way.
 Consider the following progression in order to start the course from the next phase:
+
 - Current status indicates what phases are completed and what phases are pending.
 - Last completed phase indicates the last phase that was completed.
 - Next phase indicates the next phase to be completed.
@@ -23,18 +24,17 @@ Consider the following progression in order to start the course from the next ph
 - [x] Phase 8 - Database Readers
 - [x] Phase 9 - Flat File Generation
 - [x] Phase 10 - Parallel Processing
-- [ ] Phase 11 - Partitioning
+- [x] Phase 11 - Partitioning
 - [ ] Phase 12 - Batch Testing
 - [ ] Phase 13 - Production Concerns
-- [ ] Final Project - Customer Data Platform
 
 ### Last Completed Phase
 
-Phase 10 - Parallel Processing
+Phase 11 - Partitioning
 
 ### Next Phase
 
-Phase 11 - Partitioning
+Phase 12 - Batch Testing
 
 ---
 
@@ -613,6 +613,7 @@ Prepare for enterprise environments.
 * Metrics
 * Monitoring
 * Error handling
+* Parallel execution concerns
 
 ## Practical Work
 
@@ -627,28 +628,53 @@ Understand real-world batch design.
 
 ---
 
-# Final Project
+# Final Phase - Course summary
 
-## Customer Data Platform
+## Objective
 
-Features:
+Create custom cheat sheets for each topic.
 
-* CSV import
-* Validation
-* Error management
-* Database persistence
-* CSV export
-* Reporting step
-* Parallel processing
-* Partitioning
-* Full test suite
+## Cheat Sheets structure
 
-Deliverables:
+1. Topic name (ex: Chunk Processing Fundamentals)
+2. Key concepts
+3. Best practices
+4. Common pitfalls
+5. Testing strategies
+6. Production considerations
+7. References
 
-* Production-ready batch application
-* PostgreSQL database
-* Docker environment
-* Monitoring hooks
+## Output
+
+- Markdown files for each topic
+- Code snippets for each topic example
+- Readable and concise summaries for quick reference
+
+## Constraints
+
+- Focus on Spring batch 6.x (check generated examples for deprecated APIs)
+- Generate cheat sheets in a way that they can be used as a reference for future projects.
+- Generate cheat sheets step by step, one topic at a time, and ask for confirmation before moving to the next topic.
+- JobLauncher is deprecated, DO NOT use it in examples, use JobOperator instead.
+
+## Phases to cover
+
+- Phase 0 - Environment Setup
+- Phase 1 - First Job
+- Phase 2 - Chunk Processing Fundamentals
+- Phase 3 - Job Parameters
+- Phase 4 - Validation
+- Phase 5 - Fault Tolerance
+- Phase 6 - Listeners
+- Phase 7 - Multiple Steps
+- Phase 8 - Database Readers
+- Phase 9 - Flat File Generation
+- Phase 10 - Parallel Processing
+- Phase 11 - Partitioning
+- Entire course summary: cheat sheet that summarizes the entire course, tells about xml configuration
+  alternative (for old projects) and provides a roadmap for future learning.
+
+---
 
 Completion Level:
 

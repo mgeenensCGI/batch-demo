@@ -34,10 +34,7 @@ public class CustomerEntity {
     @Column(name = CREATED_AT, nullable = false)
     private LocalDate createdAt;
 
-    /**
-     * Required by JPA.
-     */
-    protected CustomerEntity() {
+    public CustomerEntity() {
     }
 
     public CustomerEntity(Long id,

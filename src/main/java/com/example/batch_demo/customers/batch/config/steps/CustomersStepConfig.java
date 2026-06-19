@@ -53,34 +53,4 @@ public class CustomersStepConfig {
                 .taskExecutor(batchTaskExecutor)
                 .build();
     }
-
-    @Bean
-    public Step masterPartitionStep(JobRepository jobRepository,
-                                    CustomerCityPartitioner partitioner,
-                                    Step cityWorkerStep,
-                                    TaskExecutor partitionTaskExecutor) {
-
-        return new StepBuilder(MASTER_PARTITION_STEP_NAME,jobRepository)
-                .partitioner(cityWorkerStep.getName(),partitioner)
-                .step(cityWorkerStep)
-                .gridSize(4)
-                .taskExecutor(partitionTaskExecutor)
-                .build();
-    }
-
-    @Bean
-    public Step cityWorkerStep(JobRepository jobRepository,
-                               PlatformTransactionManager transactionManager,
-                               JdbcPagingItemReader<CustomerEntity> customerReaderByCity,
-                               ItemProcessor<CustomerEntity, CustomerEntity> customerCityProcessor,
-                               ItemWriter<CustomerEntity> updateItemWriter) {
-
-        return new StepBuilder(CITY_WORKER_STEP_NAME, jobRepository)
-                .<CustomerEntity, CustomerEntity>chunk(100)
-                .reader(customerReaderByCity)
-                .processor(customerCityProcessor)
-                .writer(updateItemWriter)
-                .transactionManager(transactionManager)
-                .build();
-    }
 }

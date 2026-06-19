@@ -33,15 +33,4 @@ public class CustomersJobConfig {
                 .build();
     }
 
-    @Bean
-    public Job partitioningJob(CustomerJobListener listener,
-                               JobRepository jobRepository,
-                               Step masterPartitionStep) {
-
-        return new JobBuilder(PARTITIONING_JOB_NAME,jobRepository)
-                .listener(listener)
-                .start(masterPartitionStep)
-                .build();
-    }
-
 }
